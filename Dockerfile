@@ -35,7 +35,9 @@ RUN touch /var/log/nginx/error.log && \
     touch /var/log/nginx/access.log && \
     chown odoo:odoo -R /var/log/nginx && \
     chown odoo:odoo -R /var/lib/nginx/
-
+    
+# fix odoo run OSError permission issue    
+    chown odoo:odoo -R /var/lib/odoo
 
 ENV BUILD_DATE=2016_11_03
 
